@@ -1,0 +1,7 @@
+<div>
+  <div *ngIf="userTree">
+    <ng-container *ngFor="let user of [userTree]">
+      <app-user-node [user]="user"></app-user-node>
+    </ng-container>
+  </div>
+</div>

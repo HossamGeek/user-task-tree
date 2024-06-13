@@ -1,0 +1,13 @@
+<div class="user-node" @fadeIn>
+  <div class="card">
+    <img src="assets/user.png" alt="{{user.name}}">
+    <div>{{ user.name }}</div>
+    <div>#{{ user.code.split('.')[user.code.split('.').length - 1] }}</div>
+    <button *ngIf="user.children?.length" (click)="openChild()">Open child</button>
+  </div>
+  <div *ngIf="user.children?.length && isOpen">
+    <ng-container *ngFor="let child of user.children">
+      <app-user-node [user]="child"></app-user-node>
+    </ng-container>
+  </div>
+</div>
